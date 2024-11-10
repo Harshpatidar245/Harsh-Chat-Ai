@@ -53,98 +53,166 @@
   margin: 0;
   padding: 0;
 }
-
-
-.app-container {
+/* App Container */
+.Ai_Container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: linear-gradient(to right, #f0f4ff, #e6eaff);
+  width: 100vw;
+  background: linear-gradient(to right, #ebf8ff, #edf2fb);
+  padding: 0;
+  margin: 0;
 }
 
-.header {
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #3b82f6;
-}
-
-.chat-container {
-  flex: 1;
-  overflow-y: auto;
-  padding: 20px;
+/* Wrapper for centered layout */
+.chat_wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  scrollbar-width: none;
-}
-
-.welcome-message {
-  margin-top: auto;
-  text-align: center;
-  font-size: 1.2rem;
-  color: #6b7280;
-}
-
-.chat-bubble {
-  max-width: 80%;
-  margin: 8px 0;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.chat-bubble.user {
-  background-color: #3b82f6;
-  color: white;
-  align-self: flex-end;
-  border-bottom-right-radius: 0;
-}
-
-.chat-bubble.ai {
-  background-color: #f3f4f6;
-  color: #1f2937;
-  align-self: flex-start;
-  border-bottom-left-radius: 0;
-}
-
-.input-form {
-  display: flex;
-  padding: 15px;
-  background-color: white;
-  border-top: 1px solid #e5e7eb;
-}
-
-.input-field {
-  flex: 1;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
-  margin-right: 10px;
-  outline: none;
-}
-
-.input-field:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-}
-
-.send-button {
+  height: 100%;
   padding: 0 15px;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 5px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.header_title {
+  font-size: 2rem;
+  color: #4299e1;
+  font-weight: bold;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.send-button:hover {
-  background-color: #2563eb;
+/* Chat Container */
+.chat_container {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.send-button:disabled {
-  background-color: #9ca3af;
+.welcome_container,
+.thinking_bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+.welcome_message,
+.thinking_text {
+  max-width: 500px;
+  padding: 2rem;
+  background-color: #e6f4ff;
+  border-radius: 8px;
+}
+
+.welcome_title {
+  font-size: 1.5rem;
+  color: #3182ce;
+  margin-bottom: 1rem;
+}
+
+.welcome_text,
+.instructions {
+  color: #718096;
+}
+
+.topics_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.topic_item {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #3182ce;
+}
+
+/* Chat Bubbles */
+.chat_bubble {
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.chat_bubble.question {
+  justify-content: flex-end;
+}
+
+.chat_bubble.answer {
+  justify-content: flex-start;
+}
+
+.chat_text {
+  max-width: 80%;
+  padding: 0.75rem;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.chat_text.question {
+  background-color: #4299e1;
+  color: #fff;
+  border-bottom-right-radius: 0;
+}
+
+.chat_text.answer {
+  background-color: #edf2f7;
+  color: #2d3748;
+  border-bottom-left-radius: 0;
+}
+
+/* Input Form */
+.input_form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input_wrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input_area {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+.send_button {
+  padding: 0.5rem 1rem;
+  background-color: #4299e1;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send_button:hover {
+  background-color: #3182ce;
+}
+
+.send_button.disabled {
+  background-color: #cbd5e0;
   cursor: not-allowed;
 }
